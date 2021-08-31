@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Mission to Mars</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+</head>
+
+<body>
+  <div class="container-fluid">
+    <div class="jumbotron text-center">
+      <h1>Mission to Mars</h1>
+      <p><a class="btn btn-primary btn-lg" href="/scrape" role="button">Scrape New Data</a></p>
+    </div>
+
+    <!-- Headline News -->
+    <div class="row">
+      <div class="col-md-12">
+    <h1>Latest Mars News</h1>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+    <h3> {{vacation.headline}}</h3>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-12">
+    <h5>{{vacation.text}}</h5>
+      </div>
+    </div>
+
+    <!-- Featured image and facts table, titles -->
+    <div class="row">
+      <div class="col-md-9">
+        <h1>Featured Mars Image</h1>
+      </div>
+      <div class="col-md-3">
+        <h3>Mars Facts</h3>
+      </div>
+    </div>
+
+    <!-- Featured image and facts table, titles -->
+    <div class="row">
+      <div class="col-md-9">
+        <img src="{{ vacation.featured_image }}" alt="Mars">
+      </div>
+      <div class="col-md-3">
+        {{vacation.facts_table |safe}}
+      </div>
+    </div>
+
+
+    
+    <h2>The typical weather in Costa Rica is:</h2>
+    <h3>Max Temp: {{ vacation.headline['title'] }}</h3>
+  </div>
+  </div>
+</body>
+
+</html>

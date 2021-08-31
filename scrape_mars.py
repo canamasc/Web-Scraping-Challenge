@@ -34,7 +34,12 @@ def scrape():
     tables = pd.read_html(url)
 
     df = tables[0]
-    htmltable = df.to_html()
+    df = pd.DataFrame([{0:'',1:'Mars',2:'Earth'}, {0:'Description',1:'',2:''}]).append(df)
+    df.columns = df.iloc[0]
+    df = df.iloc[1: , :]
+    df = df.set_index('')
+    htmltable = (df.to_html()).replace('\n', '')
+
     # Hemisphere high res images
     url = "https://marshemispheres.com/"
     hemispheres = []
@@ -60,9 +65,10 @@ def scrape():
     browser.quit()
 
     # Return dict
-    ans = {"headline": listings,
-        "featured image": featured_image_url,
-        "facts table": htmltable,
-        "hemisphere images": hemispheres}
+    ans = {"headline": listings['headline'],
+        "text": listings['text'],
+        "featured_image": featured_image_url,
+        "facts_table": htmltable,
+        "hemisphere_images": hemispheres}
     
     return ans
