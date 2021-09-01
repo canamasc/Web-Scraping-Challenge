@@ -13,9 +13,7 @@ def home(vacation=None):
 
     # Find one record of data from the mongo database
     redplanet_data = mongo.db.collection.find_one()
-    # print(list(redplanet_data))
-    # print(type(redplanet_data))
-    # print(redplanet_data['hemisphere_images'])
+
     # Return template and data
     return render_template('index.html', vacation=redplanet_data)
 

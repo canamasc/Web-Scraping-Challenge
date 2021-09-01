@@ -35,20 +35,20 @@
 
     <!-- Featured image and facts table, titles -->
     <div class="row">
-      <div class="col-md-9">
+      <div class="col-md-8">
         <h1>Featured Mars Image</h1>
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         <h3>Mars Facts</h3>
       </div>
     </div>
 
-    <!-- Featured image and facts table, titles -->
+    <!-- Featured image and facts table -->
     <div class="row">
-      <div class="col-md-9">
+      <div class="col-md-8">
         <img src="{{ vacation.featured_image }}" alt="Mars">
       </div>
-      <div class="col-md-3">
+      <div class="col-md-4">
         {{vacation.facts_table |safe}}
       </div>
     </div>
@@ -69,6 +69,24 @@
         <div class="thumbnail">
           <img src="{{vacation.hemisphere_images[0]['img_url']}}" alt="hemi">
           <h2> {{vacation.hemisphere_images[0]['title']}} </h2>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="thumbnail">
+          <img src="{{vacation.hemisphere_images[1]['img_url']}}" alt="hemi">
+          <h2> {{vacation.hemisphere_images[1]['title']}} </h2>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="thumbnail">
+          <img src="{{vacation.hemisphere_images[2]['img_url']}}" alt="hemi">
+          <h2> {{vacation.hemisphere_images[2]['title']}} </h2>
+        </div>
+      </div>
+      <div class="col-md-3">
+        <div class="thumbnail">
+          <img src="{{vacation.hemisphere_images[3]['img_url']}}" alt="hemi">
+          <h2> {{vacation.hemisphere_images[3]['title']}} </h2>
         </div>
       </div>
     </div>
