@@ -53,11 +53,26 @@
       </div>
     </div>
 
-
+    <!-- Mars Hemispheres title -->
+    <div class="row">
+      <div class="col-md-4">
+      </div>
+      <div class="col-md-4">
+        <h1>Mars Hemispheres</h1>
+      </div>
+      <div class="col-md-4">
+      </div>
+    </div>
     
-    <h2>The typical weather in Costa Rica is:</h2>
-    <h3>Max Temp: {{ vacation.headline['title'] }}</h3>
-  </div>
+    <div class="row">
+      <div class="col-md-3">
+        <div class="thumbnail">
+          <img src="{{vacation.hemisphere_images[0]['img_url']}}" alt="hemi">
+          <h2> {{vacation.hemisphere_images[0]['title']}} </h2>
+        </div>
+      </div>
+    </div>
+   
   </div>
 </body>
 

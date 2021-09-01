@@ -50,15 +50,16 @@ def scrape():
     for item in sidebar:
         hemi = {}
         img_url = item.find('a')['href']
-        hemi['title'] = (item.find('h3').get_text().strip())[:-9]
+        hemi['title'] = (item.find('h3').get_text().strip())
     
         newurl = url + img_url
         soup = scrape1(newurl)
         
         # is this correct image?
-        n = soup.find_all('dd')[1]
-        hemi['img_url'] = n.find('a')['href']
-        
+        # n = soup.find_all('dd')[1]
+        # hemi['img_url'] =  n.find('a')['href']
+        n = soup.find_all('li')[0]
+        hemi['img_url'] = (url + n.find('a')['href'])
         hemispheres.append(hemi)
 
     # quit browser
