@@ -20,14 +20,21 @@ def scrape():
     url = "https://redplanetscience.com"
 
     soup = scrape1(url)
-    listings["headline"] = soup.find("div", class_="content_title").get_text().strip()
-    listings["text"] = soup.find("div", class_="article_teaser_body").get_text().strip()
+    try:
+        listings["headline"] = soup.find("div", class_="content_title").get_text().strip()
+        listings["text"] = soup.find("div", class_="article_teaser_body").get_text().strip()
+    except Exception as e:
+        print(e)
+    
 
     # Get featured Mars image
     url = "https://spaceimages-mars.com/"
     soup = scrape1(url)
-    relative_image_path = soup.find_all('img')[1]["src"]
-    featured_image_url = url + relative_image_path
+    try:
+        relative_image_path = soup.find_all('img')[1]["src"]
+        featured_image_url = url + relative_image_path
+    except Exception as e:
+        print(e)
 
     # Galaxy facts tables
     url = "https://galaxyfacts-mars.com/"
@@ -45,7 +52,10 @@ def scrape():
     hemispheres = []
 
     soup = scrape1(url)
-    sidebar = soup.find_all('div', class_='item')
+    try:
+        sidebar = soup.find_all('div', class_='item')
+    except Exception as e:
+        print(e)
 
     for item in sidebar:
         hemi = {}
